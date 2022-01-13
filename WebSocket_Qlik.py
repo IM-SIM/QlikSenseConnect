@@ -67,4 +67,15 @@ wss.send(json.dumps({
 print("get script")
 print(wss.recv())
 
+wss.send(json.dumps({
+    "handle": 1,
+    "method": "DoSave",
+    "params": [],  # [{"qMode": 0}],
+    "outKey": -1,
+    "id": 3
+}))
+
+print('DoSave:')
+print(wss.recv())
+
 wss.close()
